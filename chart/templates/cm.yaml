@@ -1,0 +1,792 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: externaloperations-options
+data:
+  options.json: |-
+    [
+        {
+            "ds": "external",
+            "controller": "Customers",
+            "url": "https://saas.licensespring.com/api/v1/customers",
+            "queryParams": [
+                {
+                    "limit": "number"
+                },
+                {
+                    "offset": "number"
+                },
+                {
+                    "label__in": "string"
+                },
+                {
+                    "email": "string"
+                },
+                {
+                    "email__icontains": "string"
+                },
+                {
+                    "email__startswith": "string"
+                },
+                {
+                    "company_name__icontains": "string"
+                },
+                {
+                    "first_name__icontains": "string"
+                },
+                {
+                    "last_name__icontains": "string"
+                },
+                {
+                    "phone__icontains": "string"
+                },
+                {
+                    "reference__exact": "string"
+                },
+                {
+                    "reference__icontains": "string"
+                },
+                {
+                    "reference__startswith": "string"
+                },
+                {
+                    "account": "string"
+                },
+                {
+                    "account__name": "string"
+                },
+                {
+                    "account__name__icontains": "string"
+                },
+                {
+                    "account__code": "string"
+                },
+                {
+                    "account__code__icontains": "string"
+                }
+            ],
+            "apiFunction": "fetchCustomers",
+            "name": "Customers"
+        },
+        {
+            "ds": "external",
+            "controller": "Customers",
+            "url": "https://saas.licensespring.com/api/v1/customers/{customer_id}",
+            "pathParams": {
+                "customer_id": "number"
+            },
+            "apiFunction": "fetchCustomersById",
+            "name": "Customers"
+        },
+        {
+            "ds": "external",
+            "controller": "Customers",
+            "method": "post",
+            "type": "Customers",
+            "url": "https://saas.licensespring.com/api/v1/customers",
+            "bodyParams": [
+                {
+                    "email": "string"
+                },
+                {
+                    "first_name": "string"
+                },
+                {
+                    "last_name": "string"
+                },
+                {
+                    "company_name": "string"
+                },
+                {
+                    "phone": "string"
+                },
+                {
+                    "reference": "string"
+                },
+                {
+                    "address": "string"
+                },
+                {
+                    "postcode": "string"
+                },
+                {
+                    "city": "string"
+                },
+                {
+                    "country": "string"
+                },
+                {
+                    "state": "string"
+                },
+                {
+                    "customer_account": "number"
+                }
+            ],
+            "apiFunction": "createCustomers",
+            "name": "Customers"
+        },
+        {
+            "ds": "external",
+            "controller": "Customers",
+            "method": "patch",
+            "type": "Partial<Customers>",
+            "url": "https://saas.licensespring.com/api/v1/customers/{customer_id}",
+            "pathParams": {
+                "customer_id": "number"
+            },
+            "bodyParams": [
+                {
+                    "email": "string"
+                },
+                {
+                    "first_name": "string"
+                },
+                {
+                    "last_name": "string"
+                },
+                {
+                    "company_name": "string"
+                },
+                {
+                    "phone": "string"
+                },
+                {
+                    "reference": "string"
+                },
+                {
+                    "address": "string"
+                },
+                {
+                    "postcode": "string"
+                },
+                {
+                    "city": "string"
+                },
+                {
+                    "country": "string"
+                },
+                {
+                    "state": "string"
+                },
+                {
+                    "customer_account": "number"
+                }
+            ],
+            "apiFunction": "updateCustomers",
+            "name": "customers"
+        },
+        {
+            "ds": "external",
+            "controller": "Customers",
+            "method": "post",
+            "url": "https://saas.licensespring.com/api/v1/customers/{customer_id}/merge/",
+            "pathParams": {
+                "customer_id": "number"
+            },
+            "bodyParams": [
+                {
+                    "customer_to_merge_id": "number"
+                }
+            ],
+            "apiFunction": "mergeCustomers",
+            "name": "Customers"
+        },
+        {
+            "ds": "external",
+            "controller": "Customers",
+            "url": "https://saas.licensespring.com/api/v1/customers/export",
+            "apiFunction": "exportCustomers",
+            "name": "Customers"
+        },
+        {
+            "ds": "external",
+            "controller": "Customers",
+            "url": "https://saas.licensespring.com/api/v1/customers-import-results",
+            "apiFunction": "fetchImportCustomersResults",
+            "name": "Customers",
+            "queryParams": [
+                {
+                    "limit": "number"
+                },
+                {
+                    "offset": "number"
+                },
+                {
+                    "status_iexact": "string"
+                }
+            ]
+        },
+        {
+            "ds": "external",
+            "controller": "Customers",
+            "url": "https://saas.licensespring.com/api/v1/customers-import-results/{import_id}",
+            "apiFunction": "fetchImportCustomersResultsById",
+            "name": "Customers",
+            "pathParams": {
+                "import_id": "number"
+            }
+        },
+        {
+            "ds": "external",
+            "controller": "Customers",
+            "url": "https://saas.licensespring.com/api/v1/clabels/",
+            "apiFunction": "fetchCLabels",
+            "name": "CLabels",
+            "queryParams": [
+                {
+                    "limit": "number"
+                },
+                {
+                    "offset": "number"
+                }
+            ]
+        },
+        {
+            "ds": "external",
+            "controller": "Customers",
+            "url": "https://saas.licensespring.com/api/v1/clabels/{customer_label_id}",
+            "apiFunction": "fetchCLabelsById",
+            "name": "CLabels",
+            "pathParams": {
+                "customer_label_id": "number"
+            }
+        },
+        {
+            "ds": "external",
+            "controller": "Customers",
+            "method": "post",
+            "type": "CLabels",
+            "url": "https://saas.licensespring.com/api/v1/clabels",
+            "apiFunction": "createCLabels",
+            "name": "CLabels",
+            "bodyParams": [
+                {
+                    "label": "string"
+                },
+                {
+                    "color": "string"
+                }
+            ]
+        },
+        {
+            "ds": "external",
+            "controller": "Customers",
+            "method": "patch",
+            "type": "Partial<CLabels>",
+            "url": "https://saas.licensespring.com/api/v1/clabels/{customer_label_id}",
+            "apiFunction": "patchCLabels",
+            "name": "CLabels",
+            "bodyParams": [
+                {
+                    "label": "string"
+                },
+                {
+                    "color": "string"
+                }
+            ],
+            "pathParams": {
+                "customer_label_id": "string"
+            }
+        },
+        {
+            "ds": "external",
+            "controller": "Customers",
+            "method": "post",
+            "type": "CustomerCLabels",
+            "url": "https://saas.licensespring.com/api/v1/customerclabels",
+            "apiFunction": "addCLabelToCustomers",
+            "name": "CustomerCLabels",
+            "bodyParams": [
+                {
+                    "customer": "number"
+                },
+                {
+                    "customer_label": "number"
+                }
+            ]
+        },
+        {
+            "ds": "external",
+            "controller": "Customers",
+            "method": "del",
+            "url": "https://saas.licensespring.com/api/v1/customerclabels/{label_id}",
+            "apiFunction": "removeCustomerLabel",
+            "name": "CustomerCLabels",
+            "pathParams": {
+                "label_id": "number"
+            }
+        },
+        {
+            "ds": "external",
+            "controller": "Customers",
+            "method": "del",
+            "url": "https://saas.licensespring.com/api/v1/clabels/{delete_label_id}",
+            "apiFunction": "deleteCLabels",
+            "name": "CLabels",
+            "pathParams": {
+                "delete_label_id": "string"
+            }
+        },
+        {
+            "ds": "external",
+            "controller": "Customers",
+            "method": "del",
+            "url": "https://saas.licensespring.com/api/v1/customers/{customer_id}",
+            "apiFunction": "deleteCustomer",
+            "name": "Customers",
+            "pathParams": {
+                "customer_id": "string"
+            }
+        },
+        {
+            "ds": "external",
+            "controller": "Customers",
+            "url": "https://saas.licensespring.com/api/v1/customer-accounts",
+            "apiFunction": "fetchCustomerAccounts",
+            "name": "Customers",
+            "queryParams": [
+                {
+                    "limit": "number"
+                },
+                {
+                    "offset": "number"
+                }
+            ]
+        },
+        {
+            "ds": "external",
+            "controller": "Customers",
+            "url": "https://saas.licensespring.com/api/v1/customer-accounts/{account_id}",
+            "apiFunction": "fetchCustomerAccountsById",
+            "name": "Customers",
+            "pathParams": {
+                "account_id": "number"
+            }
+        },
+        {
+            "ds": "external",
+            "controller": "Customers",
+            "method": "post",
+            "type": "CustomerAccounts",
+            "url": "https://saas.licensespring.com/api/v1/customer-accounts",
+            "apiFunction": "createCustomer",
+            "name": "CustomerAccounts",
+            "bodyParams": [
+                {
+                    "name": "string"
+                },
+                {
+                    "code": "string"
+                },
+                {
+                    "description": "string"
+                },
+                {
+                    "phone": "string"
+                },
+                {
+                    "address": "string"
+                },
+                {
+                    "email": "string"
+                }
+            ]
+        },
+        {
+            "ds": "external",
+            "controller": "Customers",
+            "method": "patch",
+            "type": "Partial<CustomerAccounts>",
+            "url": "https://saas.licensespring.com/api/v1/customer-accounts/{account_id}",
+            "apiFunction": "patchCustomer",
+            "name": "CustomerAccounts",
+            "bodyParams": [
+                {
+                    "name": "string"
+                },
+                {
+                    "code": "string"
+                },
+                {
+                    "description": "string"
+                },
+                {
+                    "phone": "string"
+                },
+                {
+                    "address": "string"
+                },
+                {
+                    "email": "string"
+                }
+            ],
+            "pathParams": {
+                "account_id": "number"
+            }
+        },
+        {
+            "ds": "external",
+            "controller": "Customers",
+            "method": "del",
+            "url": "https://saas.licensespring.com/api/v1/customer-accounts/{account_id}",
+            "apiFunction": "deleteCustomerAccount",
+            "name": "CustomerAccounts",
+            "pathParams": {
+                "account_id": "number"
+            }
+        },
+        {
+            "ds": "external",
+            "controller": "Products",
+            "url": "https://saas.licensespring.com/api/v1/products",
+            "apiFunction": "fetchProducts",
+            "name": "Products",
+            "queryParams": [
+                {
+                    "order_by": "string"
+                },
+                {
+                    "offset": "number"
+                },
+                {
+                    "short_code": "string"
+                },
+                {
+                    "is_archived": "boolean"
+                }
+            ]
+        },
+        {
+            "ds": "external",
+            "controller": "Products",
+            "url": "https://saas.licensespring.com/api/v1/products/{product_id}",
+            "apiFunction": "fetchProductById",
+            "name": "Products",
+            "pathParams": {
+                "product_id": "number"
+            }
+        },
+        {
+            "ds": "external",
+            "controller": "Products",
+            "url": "https://saas.licensespring.com/api/v1/products/{bundle_id}/bundle",
+            "apiFunction": "fetchProductInBundle",
+            "name": "Products",
+            "pathParams": {
+                "bundle_id": "number"
+            },
+            "queryParams": [
+                {
+                    "order_by": "string"
+                },
+                {
+                    "limit": "number"
+                },
+                {
+                    "offset": "number"
+                },
+                {
+                    "short_code": "string"
+                },
+                {
+                    "is_archived": "boolean"
+                }
+            ]
+        },
+        {
+            "ds": "external",
+            "controller": "Products",
+            "url": "https://saas.licensespring.com/api/v1/products/{product_id_in_bundle}/in_bundle",
+            "apiFunction": "fetchBundlesForProduct",
+            "name": "Products",
+            "pathParams": {
+                "product_id_in_bundle": "number"
+            },
+            "queryParams": [
+                {
+                    "order_by": "string"
+                },
+                {
+                    "limit": "number"
+                },
+                {
+                    "offset": "number"
+                },
+                {
+                    "short_code": "string"
+                },
+                {
+                    "is_archived": "boolean"
+                }
+            ]
+        },
+        {
+            "ds": "external",
+            "controller": "Products",
+            "url": "https://saas.licensespring.com/api/v1/installation-files",
+            "apiFunction": "fetchInstallationFiles",
+            "name": "InstallationFiles",
+            "queryParams": [
+                {
+                    "limit": "number"
+                },
+                {
+                    "offset": "number"
+                }
+            ]
+        },
+        {
+            "ds": "external",
+            "controller": "Products",
+            "method": "post",
+            "type": "InstallationFiles",
+            "url": "https://saas.licensespring.com/api/v1/installation-files",
+            "apiFunction": "createInstallationFiles",
+            "name": "InstallationFiles",
+            "bodyParams": [
+                {
+                    "environment": "number"
+                },
+                {
+                    "hash_md5": "number"
+                },
+                {
+                    "full_link": "string"
+                },
+                {
+                    "product": "number"
+                },
+                {
+                    "release_date": "string"
+                },
+                {
+                    "version": "string"
+                },
+                {
+                    "release_notes_link": "string"
+                },
+                {
+                    "eula_link": "string"
+                },
+                {
+                    "size": "string"
+                },
+                {
+                    "requires_version": "string"
+                }
+            ]
+        },
+        {
+            "ds": "external",
+            "controller": "Products",
+            "url": "https://saas.licensespring.com/api/v1/installation-files/{installation_id}",
+            "apiFunction": "fetchInstallationFileById",
+            "name": "InstallationFiles",
+            "pathParams": {
+                "installation_id": "number"
+            }
+        },
+        {
+            "ds": "external",
+            "controller": "Products",
+            "url": "https://saas.licensespring.com/api/v1/product-custom-fields",
+            "apiFunction": "fetchProductCustomFields",
+            "name": "ProductCustomFields",
+            "queryParams": [
+                {
+                    "limit": "number"
+                },
+                {
+                    "offset": "number"
+                }
+            ]
+        },
+        {
+            "ds": "external",
+            "controller": "Products",
+            "url": "https://saas.licensespring.com/api/v1/product-custom-fields/{custom_field_id}",
+            "apiFunction": "fetchProductCustomFieldById",
+            "name": "Products",
+            "pathParams": {
+                "custom_field_id": "number"
+            }
+        },
+        {
+            "ds": "external",
+            "method": "post",
+            "type": "ProductCustomFields",
+            "controller": "Products",
+            "url": "https://saas.licensespring.com/api/v1/product-custom-fields",
+            "apiFunction": "createProductCustomFields",
+            "name": "ProductCustomFields",
+            "bodyParams": [
+                {
+                    "name": "string"
+                },
+                {
+                    "data_type": "string"
+                },
+                {
+                    "default_value": "string"
+                },
+                {
+                    "description": "string"
+                },
+                {
+                    "product": "number"
+                }
+            ]
+        },
+        {
+            "ds": "external",
+            "method": "patch",
+            "type": "Partial<ProductCustomFields>",
+            "controller": "Products",
+            "url": "https://saas.licensespring.com/api/v1/product-custom-fields/{productCustomField}",
+            "apiFunction": "patchProductCustomFields",
+            "name": "ProductCustomFields",
+            "pathParams": {
+                "productCustomField": "number"
+            },
+            "bodyParams": [
+                {
+                    "name": "string"
+                },
+                {
+                    "data_type": "string"
+                },
+                {
+                    "default_value": "string"
+                },
+                {
+                    "description": "string"
+                }
+            ]
+        },
+        {
+            "ds": "external",
+            "controller": "Products",
+            "method": "del",
+            "url": "https://saas.licensespring.com/api/v1/product-custom-fields/{custom_field_id}",
+            "apiFunction": "deleteProductCustomField",
+            "name": "Products",
+            "pathParams": {
+                "custom_field_id": "number"
+            }
+        },
+        {
+            "ds": "external",
+            "controller": "Products",
+            "url": "https://saas.licensespring.com/api/v1/product-features",
+            "apiFunction": "fetchProductFeatures",
+            "name": "Products",
+            "queryParams": [
+                {
+                    "limit": "number"
+                },
+                {
+                    "offset": "number"
+                },
+                {
+                    "product": "number"
+                }
+            ]
+        },
+        {
+            "ds": "external",
+            "controller": "Products",
+            "url": "https://saas.licensespring.com/api/v1/product-features/{feature_id}",
+            "apiFunction": "fetchProductFeatureById",
+            "name": "Products",
+            "pathParams": {
+                "feature_id": "number"
+            }
+        },
+        {
+            "ds": "external",
+            "controller": "Products",
+            "method": "post",
+            "type": "ProductFeatures",
+            "url": "https://saas.licensespring.com/api/v1/product-features",
+            "apiFunction": "createProductFeatures",
+            "name": "ProductFeatures",
+            "bodyParams": [
+                {
+                    "name": "string"
+                },
+                {
+                    "code": "string"
+                },
+                {
+                    "feature_type": "string"
+                },
+                {
+                    "max_consumption": "number"
+                },
+                {
+                    "allow_overages": "boolean"
+                },
+                {
+                    "max_overages": "number"
+                },
+                {
+                    "reset_consumption": "boolean"
+                },
+                {
+                    "consumption_period": "string"
+                },
+                {
+                    "product": "number"
+                }
+            ]
+        },
+        {
+            "ds": "external",
+            "controller": "Products",
+            "method": "patch",
+            "type": "Partial<ProductFeatures>",
+            "url": "https://saas.licensespring.com/api/v1/product-features/{productFeatureId}",
+            "apiFunction": "patchProductFeatures",
+            "name": "ProductFeatures",
+            "pathParams": {
+                "productFeatureId": "number"
+            },
+            "bodyParams": [
+                {
+                    "name": "string"
+                },
+                {
+                    "code": "string"
+                },
+                {
+                    "feature_type": "string"
+                },
+                {
+                    "max_consumption": "number"
+                },
+                {
+                    "allow_overages": "boolean"
+                },
+                {
+                    "max_overages": "number"
+                },
+                {
+                    "reset_consumption": "boolean"
+                },
+                {
+                    "consumption_period": "string"
+                }
+            ]
+        },
+        {
+            "ds": "external",
+            "controller": "Products",
+            "method": "del",
+            "url": "https://saas.licensespring.com/api/v1/product-features/{productFeatureId}",
+            "apiFunction": "deleteProductFeature",
+            "name": "ProductFeatures",
+            "pathParams": {
+                "productFeatureId": "number"
+            }
+        }
+    ]
