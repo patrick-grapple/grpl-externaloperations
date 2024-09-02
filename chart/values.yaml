@@ -38,11 +38,11 @@ gras-deploy:
       mountPath: /data
     - name: externaloperations-options-volume
       mountPath: /tmp/externaloperations
-    prepatches:
-    - name: licvar
-      content: ZXhwb3J0IExJQ0VOU0VTUFJJTkdfQVVUSE9SSVpBVElPTj0nQXBpLUtleSBlWDBTMG5BUS52V3E3ZlRqcGs5ZGNrUHNNUExJTXZNYmgzc0ZLMmFySycK
-    - name: externaloperations
-      content: ZXhwb3J0IEV4dGVybmFsT3BlcmF0aW9ucz0nL3RtcC9leHRlcm5hbG9wZXJhdGlvbnMvb3B0aW9ucy5qc29uJwo=
+    # prepatches:
+    # - name: licvar
+    #   content: ZXhwb3J0IExJQ0VOU0VTUFJJTkdfQVVUSE9SSVpBVElPTj0nQXBpLUtleSBlWDBTMG5BUS52V3E3ZlRqcGs5ZGNrUHNNUExJTXZNYmgzc0ZLMmFySycK
+    # - name: externaloperations
+    #   content: ZXhwb3J0IEV4dGVybmFsT3BlcmF0aW9ucz0nL3RtcC9leHRlcm5hbG9wZXJhdGlvbnMvb3B0aW9ucy5qc29uJwo=
     datasources:
     # - name: "db"
     #   spec:
