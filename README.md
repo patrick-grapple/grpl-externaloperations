@@ -3,6 +3,39 @@
 
 ## getting started
 
+```
+k create secret generic externaloperations-options --from-literal ExternalOperations="/tmp/externaloperations/options.json" --from-literal LICENSESPRING_AUTHORIZATION='Api-Key ${LICENSE_SPRING_API_KEY_FROM_1PASSWORD}'
+```
+
+
+
+deactivated: (not necessary yet)
+```
+k create secret -n grpl-system generic onepassword-connect-token --from-file /Users/patrickriegler/code/grapple/grsf-license-function/1password-credentials.json
+```
+
+```
+kubectl apply -f - <<EOF
+---
+apiVersion: external-secrets.io/v1beta1
+kind: SecretStore
+metadata:
+  name: staging
+spec:
+  provider:
+    onepassword:
+      connectHost: https://onepassword-connect-staging
+      vaults:
+        staging: 1  # look in this vault first
+        shared: 2   # next look in here. error if not found
+      auth:
+        secretRef:
+        connectTokenSecretRef:
+          name: onepassword-connect-token-staging
+          key: token
+```
+
+
 ### dev mode - using docker-compose
 
 
